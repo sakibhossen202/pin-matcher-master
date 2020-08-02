@@ -12,37 +12,37 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control" type="text">
+                    <input class="form-control  generate-num" type="text">
                     <button class="generate-btn">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input class="form-control input-shower" type="text">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                              <div class="button "onclick= " calculate(this.innerText)">7</div>
+                              <div class="button "onclick= " calculate(this.innerText)">8</div>
+                              <div class="button"onclick= " calculate(this.innerText)">9</div>
                             </div>
-                            <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                            <div class="calc-row">
+                              <div class="button " onclick= " calculate(this.innerText)">4</div>
+                              <div class="button "onclick= " calculate(this.innerText)">5</div>
+                              <div class="button "onclick= " calculate(this.innerText)">6</div>
                             </div>
-                            <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                            <div class="calc-ow">
+                              <div class="button "onclick= " calculate(this.innerText)">1</div>
+                              <div class="button " onclick= " calculate(this.innerText)">2</div>
+                              <div class="button " onclick= " calculate(this.innerText)">3</div>
                             </div>
-                            <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                            <div class="calc-row">
+                                <div class="button" onclick="removeFromLast()"> < </div>
+                                <div class="button "onclick= " calculate(this.innerText)">0</div>
+                                <div class="button " onclick="clearAll()">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button type="submit" class="submit-btn" onclick="submitAction()">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
@@ -50,9 +50,76 @@
             </div>
         </div>
         <div class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <p class="notify wrong">❌ Pin Didn't Match, Please try again</p>
+            <p class="notify right">✅ Pin Matched... Secret door is opening for you</p>
         </div>
     </div>
+    <script>
+        //step 1
+        document.querySelector(".notify-section").style.display = "none";
+        //step-2
+        document.querySelector(".generate-btn").addEventListener("click",generatePin)
+        function generatePin(){
+            document.querySelector(".form-control").value = Math.ceil(Math.random()*(9999-1000 + 1 )+ 1000);
+            document.querySelector(".form-control").style.color ="white"
+            
+        }
+
+        //step-3
+        function calculate(x){
+            const inputAmount =document.querySelector(".input-shower")
+            inputAmount.value = inputAmount.value + x
+            document.querySelector(".input-shower").style.color ="white"
+            document.querySelector(".input-shower").style.textAlign ="right"
+
+        }
+        
+        //step-4
+        function submitAction(){
+                const assignValue = document.querySelector(".input-shower")
+
+                const newAssignValue = parseFloat(assignValue.value)
+
+                
+
+                const generateValue = document.querySelector(".generate-num")
+
+                const newGenerateValue = parseFloat(generateValue.value)
+
+                
+                
+
+                if(newAssignValue == newGenerateValue){
+                   document.querySelector(".notify-section").style.display="block"
+                   document.querySelector(".wrong").style.display= "none"
+
+                }
+
+                else{
+                    document.querySelector(".notify-section").style.display="block"
+                    document.querySelector(".right").style.display = "none";
+                }
+        }
+
+        //step-5
+
+        function removeFromLast(){
+            
+           const currentValue =  document.querySelector(".input-shower").value
+            
+            
+
+           
+        }
+
+        function clearAll(){
+            document.querySelector(".input-shower").value = null;
+            
+        }
+        
+       
+
+
+    </script>
 </body>
 </html>
