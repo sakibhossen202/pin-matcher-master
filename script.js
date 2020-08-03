@@ -56,7 +56,7 @@
         }
 
        
-        //step-5 for bonus mark Attaining
+        //step-5 for bonus marks Attaining
 
         function removeFromLast(){
             
@@ -72,5 +72,7 @@
             document.querySelector(".inputValueShower").value = null;
             
         }
+   
+        
         
     
