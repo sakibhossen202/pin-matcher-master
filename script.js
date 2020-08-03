@@ -23,7 +23,7 @@
         }
         
         //step-4 for showing notify-section according to the condition
-
+s
         function submitAction(){
                 const assignValue = document.querySelector(".inputValueShower").value
 
@@ -31,20 +31,23 @@
 
                 if(assignValue == generateValue){
                    document.querySelector(".notify-section").style.display="block"
+                   document.querySelector(".right").style.display= "block"
                    document.querySelector(".wrong").style.display= "none"
 
                 }
 
                 else{
-                    document.querySelector(".notify-section").style.display="block"
+                    document.querySelector(".notify-section .wrong").style.display="block"
+                    document.querySelector(".wrong").style.display ="block";
                     document.querySelector(".right").style.display ="none";
                 }
 
                 document.querySelector(".inputValueShower").value = "" 
             
+                
                 //part 6
 
-                document.querySelector(".action-left").innerText 
+                document.querySelector(".action-left").innerText = 0 + ' try left'
 
         }
 
@@ -59,6 +62,7 @@
 
           document.querySelector(".inputValueShower").value = newCurrentValue   
         }
+
 
         function clearAll(){
             document.querySelector(".inputValueShower").value = null;
