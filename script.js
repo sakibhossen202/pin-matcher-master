@@ -42,7 +42,7 @@
                 }
 
                 else{
-                    document.querySelector(".notify-section .wrong").style.display="block"
+                    document.querySelector(".notify-section").style.display="block"
                     document.querySelector(".wrong").style.display ="block";
                     document.querySelector(".right").style.display ="none";
 
