@@ -67,7 +67,7 @@
 
         //step-3
         function calculate(x){
-            const inputAmount =document.querySelector(".input-shower")
+            const inputAmount = document.querySelector(".input-shower")
             inputAmount.value = inputAmount.value + x
             document.querySelector(".input-shower").style.color ="white"
             document.querySelector(".input-shower").style.textAlign ="right"
@@ -76,20 +76,12 @@
         
         //step-4
         function submitAction(){
-                const assignValue = document.querySelector(".input-shower")
+                const assignValue = document.querySelector(".input-shower").value
 
-                const newAssignValue = parseFloat(assignValue.value)
-
-                
-
-                const generateValue = document.querySelector(".generate-num")
-
-                const newGenerateValue = parseFloat(generateValue.value)
+                const generateValue = document.querySelector(".generate-num").value
 
                 
-                
-
-                if(newAssignValue == newGenerateValue){
+                if(assignValue == generateValue){
                    document.querySelector(".notify-section").style.display="block"
                    document.querySelector(".wrong").style.display= "none"
 
@@ -106,6 +98,13 @@
         function removeFromLast(){
             
            const currentValue =  document.querySelector(".input-shower").value
+
+          const newCurrentValue = currentValue.substring(0, currentValue.length - 1)
+
+          document.querySelector(".input-shower").value = newCurrentValue
+           
+
+           
             
             
 
