@@ -35,7 +35,7 @@
 
                 }
 
-                else if(assignValue != generateValue){
+                else{
                     document.querySelector(".notify-section").style.display="block"
                     document.querySelector(".right").style.display ="none";
                 }
