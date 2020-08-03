@@ -1,29 +1,32 @@
 
-        //step 1 for Hiding notify section first 
+        //step 1 for Hiding notify-section first 
 
         document.querySelector(".notify-section").style.display = "none";
 
-        //step-2 for Generating Random number within 9999 include 9999
+        //step-2 for Generating Random number within 9999 including 9999
 
         document.querySelector(".generate-btn").addEventListener("click",generatePin)
         function generatePin(){
-            document.querySelector(".form-control").value = Math.ceil(Math.random()*(9999-1000 + 1 ) + 1000);
-            document.querySelector(".form-control").style.color ="white"
+            document.querySelector(".generatedValue").value = Math.ceil(Math.random()*(9999-1000 + 1 ) + 1000);
+            document.querySelector(".generatedValue").style.color ="white"
+            document.querySelector(".generatedValue").style.fontSize ="1.5em"
+            document.querySelector(".generatedValue").style.textAlign ="center"
             
         }
 
         //step-3 for Showing input value in input-box
 
         function inputValueTaker(x){
-            const inputAmount = document.querySelector(".inputValueShower")
-            inputAmount.value = inputAmount.value + x
-            document.querySelector(".inputValueShower").style.color ="white"
-            document.querySelector(".inputValueShower").style.textAlign ="right"
+            const inputShower = document.querySelector(".inputValueShower")
+            inputShower.value = inputShower.value + x;
+            inputShower.style.color ="white"
+            inputShower.style.textAlign ="right"
+            inputShower.style.fontSize ="1.5em"
 
         }
         
         //step-4 for showing notify-section according to the condition
-s
+
         function submitAction(){
                 const assignValue = document.querySelector(".inputValueShower").value
 
@@ -34,21 +37,22 @@ s
                    document.querySelector(".right").style.display= "block"
                    document.querySelector(".wrong").style.display= "none"
 
+                   document.querySelector(".action-left").innerText = 0 + ' try left'
+
                 }
 
                 else{
                     document.querySelector(".notify-section .wrong").style.display="block"
                     document.querySelector(".wrong").style.display ="block";
                     document.querySelector(".right").style.display ="none";
+
+                    document.querySelector(".action-left").innerText = 2 + ' try left'
                 }
 
                 document.querySelector(".inputValueShower").value = "" 
             
                 
-                //part 6
-
-                document.querySelector(".action-left").innerText = 1 + 'try left'
-
+                
         }
 
        
