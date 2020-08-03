@@ -47,7 +47,7 @@ s
                 
                 //part 6
 
-                document.querySelector(".action-left").innerText = 0 + ' try left'
+                document.querySelector(".action-left").innerText = 1 + 'try left'
 
         }
 
