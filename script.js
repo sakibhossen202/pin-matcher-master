@@ -39,6 +39,8 @@
                     document.querySelector(".notify-section").style.display="block"
                     document.querySelector(".right").style.display ="none";
                 }
+
+                document.querySelector(".inputValueShower").value = "" 
             
                 //part 6
 
